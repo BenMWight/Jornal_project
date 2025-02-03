@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Entry - Step 1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Step 1: Daily Habits</h1>
+    <form action="/entry_step2" method="post">
+        <label>Sleep (hours per day):</label>
+        <input type="number" name="sleep" required><br>
+
+        <label>Screen Time (hours per day):</label>
+        <input type="number" name="screen_time" required><br>
+
+        <label>Books (pages read / books finished):</label>
+        <input type="text" name="books" required><br>
+
+        <button type="submit">Next</button>
+    </form>
+    <a href="/"><button>Back</button></a>
+</body>
+</html>

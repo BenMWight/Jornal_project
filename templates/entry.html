@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Entry</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Journal Entry</h2>
+        <form action="{{ url_for('entry') }}" method="post">
+            <label>Sleep (hours):</label>
+            <input type="number" name="sleep" required>
+
+            <label>Screen Time (hours):</label>
+            <input type="number" name="screen_time" required>
+
+            <label>Books (Pages read or books finished):</label>
+            <input type="text" name="books" required>
+
+            <label>Fitness (Type and hours):</label>
+            <input type="text" name="fitness" required>
+
+            <label>Work Hours:</label>
+            <input type="number" name="work_hours" required>
+
+            <label>Social (Describe):</label>
+            <input type="text" name="social" required>
+
+            <label>Goal for Next Week:</label>
+            <input type="text" name="goal_next_week" required>
+
+            <label>Thing to Improve for Next Week:</label>
+            <input type="text" name="improvement_next_week" required>
+
+            <label>1 Achievement:</label>
+            <input type="text" name="achievement" required>
+
+            <label>1 Challenge:</label>
+            <input type="text" name="challenge" required>
+
+            <button type="submit">Submit Entry</button>
+        </form>
+    </div>
+</body>
+</html>

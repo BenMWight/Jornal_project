@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Your Journal Summary</h2>
+        {% for entry in entries %}
+        <div class="entry">
+            <p><strong>Sleep:</strong> {{ entry.sleep }} hours</p>
+            <p><strong>Screen Time:</strong> {{ entry.screen_time }} hours</p>
+            <p><strong>Books:</strong> {{ entry.books }}</p>
+            <p><strong>Fitness:</strong> {{ entry.fitness }}</p>
+            <p><strong>Work Hours:</strong> {{ entry.work_hours }}</p>
+            <p><strong>Social:</strong> {{ entry.social }}</p>
+            <p><strong>Goal for Next Week:</strong> {{ entry.goal_next_week }}</p>
+            <p><strong>Improvement for Next Week:</strong> {{ entry.improvement_next_week }}</p>
+            <p><strong>Achievement:</strong> {{ entry.achievement }}</p>
+            <p><strong>Challenge:</strong> {{ entry.challenge }}</p>
+        </div>
+        {% endfor %}
+        
+        <h3>{{ encouragement | random }}</h3>
+        <a href="{{ url_for('entry') }}" class="button">Add Another Entry</a>
+    </div>
+</body>
+</html>

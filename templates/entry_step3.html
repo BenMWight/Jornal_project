@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Entry - Step 3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Step 3: Weekly Reflection</h1>
+    <form action="/summary" method="post">
+        <label>Goal for next week:</label>
+        <input type="text" name="goal" required><br>
+
+        <label>Thing to improve:</label>
+        <input type="text" name="improvement" required><br>
+
+        <label>Achievement:</label>
+        <input type="text" name="achievement" required><br>
+
+        <label>Challenging thing:</label>
+        <input type="text" name="challenge" required><br>
+
+        <button type="submit">Finish</button>
+    </form>
+    <a href="/entry_step2"><button>Back</button></a>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Entry - Step 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Step 2: Work & Fitness</h1>
+    
+    <form id="entryForm" action="/entry_step3" method="post">
+        <label>Fitness (Type & Hours):</label>
+        <input type="text" name="fitness" id="fitness" required><br>
+
+        <label>Work Hours:</label>
+        <input type="number" name="work_hours" id="work_hours" required><br>
+
+        <label>Social Hours:</label>
+        <input type="number" name="social" id="social" required><br>
+
+        <button type="submit">Next</button>
+    </form>
+    
+    <a href="/entry_step1"><button>Back</button></a>
+
+    <script>
+        document.getElementById("entryForm").addEventListener("submit", function(event) {
+            let fitness = document.getElementById("fitness").value;
+            let workHours = document.getElementById("work_hours").value;
+            let social = document.getElementById("social").value;
+            
+            let errors = [];
+
+            if (!fitness.trim()) errors.push("Fitness field is empty.");
+            if (!workHours.trim()) errors.push("Work Hours field is empty.");
+            if (!social.trim()) errors.push("Social Hours field is empty.");
+
+            if (errors.length > 0) {
+                console.error("Form submission error:", errors);
+                alert("Please fill in all fields before continuing.");
+                event.preventDefault(); // Stop form submission
+            }
+        });
+    </script>
+</body>
+</html>
