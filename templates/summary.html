@@ -3,29 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journal Summary</title>
+    <title>Weekly Summary</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h2>Your Journal Summary</h2>
-        {% for entry in entries %}
-        <div class="entry">
-            <p><strong>Sleep:</strong> {{ entry.sleep }} hours</p>
-            <p><strong>Screen Time:</strong> {{ entry.screen_time }} hours</p>
-            <p><strong>Books:</strong> {{ entry.books }}</p>
-            <p><strong>Fitness:</strong> {{ entry.fitness }}</p>
-            <p><strong>Work Hours:</strong> {{ entry.work_hours }}</p>
-            <p><strong>Social:</strong> {{ entry.social }}</p>
-            <p><strong>Goal for Next Week:</strong> {{ entry.goal_next_week }}</p>
-            <p><strong>Improvement for Next Week:</strong> {{ entry.improvement_next_week }}</p>
-            <p><strong>Achievement:</strong> {{ entry.achievement }}</p>
-            <p><strong>Challenge:</strong> {{ entry.challenge }}</p>
-        </div>
-        {% endfor %}
-        
-        <h3>{{ encouragement | random }}</h3>
-        <a href="{{ url_for('entry') }}" class="button">Add Another Entry</a>
-    </div>
+    <h1>Your Weekly Reflection</h1>
+
+    <p><strong>Sleep:</strong> {{ data.get('sleep', 'N/A') }} hours</p>
+    <p><strong>Screen Time:</strong> {{ data.get('screen_time', 'N/A') }} hours</p>
+    <p><strong>Books Read:</strong> {{ data.get('books', 'N/A') }}</p>
+    <p><strong>Fitness:</strong> {{ data.get('fitness', 'N/A') }}</p>
+    <p><strong>Work Hours:</strong> {{ data.get('work_hours', 'N/A') }}</p>
+    <p><strong>Social:</strong> {{ data.get('social', 'N/A') }}</p>
+    <p><strong>Goal for next week:</strong> {{ data.get('goal', 'N/A') }}</p>
+    <p><strong>Thing to improve:</strong> {{ data.get('improvement', 'N/A') }}</p>
+    <p><strong>Achievement:</strong> {{ data.get('achievement', 'N/A') }}</p>
+    <p><strong>Challenging thing:</strong> {{ data.get('challenge', 'N/A') }}</p>
+
+    <a href="/"><button>Home</button></a>
 </body>
 </html>
